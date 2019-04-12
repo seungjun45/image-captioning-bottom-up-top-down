@@ -71,8 +71,10 @@ if __name__ == '__main__':
         'spatial_features', (len(test_imgids), num_fixed_boxes, 6), 'f')
 
     test_counter = 0
+    unknown_ids = []
 
     print("reading tsv...")
+    print('%d image_ids left...' % len(test_imgids))
     with open(infile, "r+") as tsv_in_file:
         reader = csv.DictReader(tsv_in_file, delimiter='\t', fieldnames=FIELDNAMES)
         for item in reader:
@@ -119,7 +121,8 @@ if __name__ == '__main__':
                 test_spatial_img_features[test_counter, :, :] = spatial_features
                 test_counter += 1
             else:
-                print('Unknown image id: %d' % image_id)
+                unknown_ids.append(image_id)
+        print('%d unknown_ids...' % len(unknown_ids))
 
     if len(test_imgids) != 0:
         print('Warning: test_image_ids is not empty')
