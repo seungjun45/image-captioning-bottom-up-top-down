@@ -110,7 +110,7 @@ if __name__ == '__main__':
                 axis=1)
 
             if image_id in test_imgids:
-                #test_imgids.remove(image_id)
+                test_imgids.remove(image_id)
                 test_indices[image_id] = test_counter
                 test_img_bb[test_counter, :, :] = bboxes
                 test_img_features[test_counter, :, :] = np.frombuffer(
@@ -119,7 +119,7 @@ if __name__ == '__main__':
                 test_spatial_img_features[test_counter, :, :] = spatial_features
                 test_counter += 1
             else:
-                assert False, 'Unknown image id: %d' % image_id
+                print('Unknown image id: %d' % image_id)
 
     if len(test_imgids) != 0:
         print('Warning: test_image_ids is not empty')
