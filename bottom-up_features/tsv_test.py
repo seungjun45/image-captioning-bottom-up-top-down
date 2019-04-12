@@ -22,6 +22,7 @@ import utils
 from tqdm import tqdm
 from address_server_caption import *
 import os
+import pdb
 
 decrement = True
 maxInt = sys.maxsize
@@ -58,6 +59,7 @@ if __name__ == '__main__':
     else:
         test_imgids = utils.load_imageid(addr_test_imgs)
         pickle.dump(test_imgids, open(test_ids_file, 'wb'),protocol=2)
+
 
     test_indices = {}
 
@@ -108,7 +110,7 @@ if __name__ == '__main__':
                 axis=1)
 
             if image_id in test_imgids:
-                test_imgids.remove(image_id)
+                #test_imgids.remove(image_id)
                 test_indices[image_id] = test_counter
                 test_img_bb[test_counter, :, :] = bboxes
                 test_img_features[test_counter, :, :] = np.frombuffer(
