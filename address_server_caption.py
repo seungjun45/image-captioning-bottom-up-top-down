@@ -8,7 +8,7 @@ addr_dataroot = os.path.join('codes', 'tools', 'data')
 # BAN address
 if (platform.system() == 'Linux'):
     addr_BAN = '../../VQA/BAN'
-    addr_test_imgs = '../../Data_Share/Datas/VQA_COCO/Images/test2015'
+    addr_test_imgs = '../../Data_Share/Datas/VQA_COCO/Images/test2014'
     addr_train_imgs = '../../Data_Share/Datas/VQA_COCO/Images/train2014'
     addr_val_imgs = '../../Data_Share/Datas/VQA_COCO/Images/val2014'
     addr_hdf5path = '../../Data_Share/Datas/VQA_COCO/BottomUpPreTrain/hdf5'
@@ -26,7 +26,7 @@ if (platform.system() == 'Linux'):
 
 elif (platform.system() == 'Windows'):
     addr_BAN = 'D:\\VQA\\BAN'
-    addr_test_imgs = 'D:\\Data_Share\\Datas\\VQA_COCO\\Images\\test2015'
+    addr_test_imgs = 'D:\\Data_Share\\Datas\\VQA_COCO\\Images\\test2014'
     addr_train_imgs = 'D:\\Data_Share\\Datas\\VQA_COCO\\Images\\train2014'
     addr_val_imgs = 'D:\\Data_Share\\Datas\\VQA_COCO\\Images\\val2014'
     addr_hdf5path = '../../Data_Share/Datas/VQA_COCO/BottomUpPreTrain/hdf5'
